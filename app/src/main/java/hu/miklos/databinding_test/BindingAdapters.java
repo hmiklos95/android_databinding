@@ -39,7 +39,11 @@ public class BindingAdapters {
 
         @Override
         public void onBindViewHolder(BindingHolder holder, int position) {
+            final Person person = persons.get(position);
 
+            holder.getBinding().setPerson(person);
+
+            holder.getBinding().executePendingBindings();
 
         }
 
