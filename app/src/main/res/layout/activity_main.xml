@@ -10,12 +10,17 @@
         <variable
             name="persons"
             type="java.util.List"></variable>
+
+        <variable
+            name="warningShown"
+            type="Boolean"></variable>
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -35,11 +40,23 @@
                 android:background="@drawable/toolbar_dropshadow" />
         </FrameLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@{warningShown ? @dimen/activity_vertical_margin : @dimen/activity_vertical_zero_margin}">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="openFileChoose"
             android:text="Fájl" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showWarning"
+            android:text="Show warning" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
