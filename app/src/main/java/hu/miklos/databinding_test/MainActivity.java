@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements WarningFragment.O
     }
 
     public void showWarning(View view) {
-        getSupportFragmentManager().beginTransaction().add(WarningFragment.createForActivity(this), "warning").commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, WarningFragment.createForActivity(this)).commit();
     }
 
 
