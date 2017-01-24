@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements WarningFragment.O
     private static MainActivity instance;
 
     private ActivityMainBinding binding;
+
+    private List<Person> persons;
     public MainActivity() {
         instance = this;
     }
@@ -31,10 +33,10 @@ public class MainActivity extends AppCompatActivity implements WarningFragment.O
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        List<Person> persons = new ArrayList<>();
-        persons.add(new Person("miki", "központikoli", "test@example.com", 22));
-        persons.add(new Person("kapitány", "központikoli", "test@example.com", 23));
-        persons.add(new Person("kálmán", "központikoli", "test@example.com", 23));
+        persons = new ArrayList<>();
+        persons.add(new Person("miki", "központikoli", "test@example.com", 22, true));
+        persons.add(new Person("kapitány", "központikoli", "test@example.com", 23, false));
+        persons.add(new Person("kálmán", "központikoli", "test@example.com", 23, false));
 
         binding.setPersons(persons);
         binding.setWarningShown(false);
@@ -50,6 +52,10 @@ public class MainActivity extends AppCompatActivity implements WarningFragment.O
 
     public void showWarning(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.container, WarningFragment.createForActivity(this)).commit();
+    }
+
+    public void checkPersons(View view) {
+
     }
 
 

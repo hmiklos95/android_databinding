@@ -8,12 +8,14 @@ public class Person {
     private String addredess;
     private String email;
     private int age;
+    private boolean selected;
 
-    public Person(String name, String addredess, String email, int age) {
+    public Person(String name, String addredess, String email, int age, boolean selected) {
         this.name = name;
         this.addredess = addredess;
         this.email = email;
         this.age = age;
+        this.selected = selected;
     }
 
     public String getName() {
@@ -46,5 +48,14 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+
+    public boolean getSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

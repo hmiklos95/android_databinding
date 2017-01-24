@@ -55,19 +55,19 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@{warningShown ? @dimen/activity_vertical_margin : @dimen/activity_vertical_zero_margin}">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="openFileChoose"
-                    android:text="Fájl" />
+                <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:context="hu.miklos.databinding_test.MainActivity"
+                        app:items="@{persons}"
+                >
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="showWarning"
-                    android:text="Show warning" />
+                </android.support.v7.widget.RecyclerView>
 
             </LinearLayout>
+
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check persons."
+                android:onClick="checkPersons"/>
         </LinearLayout>
 
     </LinearLayout>
